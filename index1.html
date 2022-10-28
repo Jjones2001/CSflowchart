@@ -102,20 +102,20 @@
 </head>
 <body>
 
-<button class="open-button" onclick="openForm()">Lit elective</button>
+<button id = "englishBTN" class="open-button" onclick="openForm()" >Lit elective</button>
 <div class="form-popup" id="myForm">
- <form action="/action_page.php" class="form-container">
-  <input type="radio" id="english211" name="english" value="ENGL 211">
-  <label for="english211">English 211</label><br>
-  <input type="radio" id="english212" name="english" value="ENGL 212">
-  <label for="english211">English 212</label><br>
-  <input type="radio" id="english213" name="english" value="ENGL 213">
-  <label for="english211">English 213</label><br>
-  <input type="radio" id="english214" name="english" value="ENGL 214">
-  <label for="english211">English 214</label><br>
-  <button type="submit" class="btn">Submit</button>
+ <!--<form action="/fillin.php" class="form-container">-->
+  <input type="radio" id="english" name="english" value="ENGL 211">
+  <label for="english">English 211</label><br>
+  <input type="radio" id="english" name="english" value="ENGL 212">
+  <label for="english">English 212</label><br>
+  <input type="radio" id="english" name="english" value="ENGL 213">
+  <label for="english">English 213</label><br>
+  <input type="radio" id="english" name="english" value="ENGL 214">
+  <label for="english">English 214</label><br>
+  <button class="btn" onclick="updateButtonText()">Submit</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
+<!--  </form> -->
 </div>
 
 <script>
@@ -124,7 +124,15 @@ function openForm() {
 }
 
 function closeForm() {
+
   document.getElementById("myForm").style.display = "none";
+}
+
+function updateButtonText(){
+  let text = document.getElementById("english").value;
+  alert(text);
+  text = "Lit Elective: \n" + text;
+  document.getElementById("englishBTN").innerHTML = text;
 }
 </script>
 
