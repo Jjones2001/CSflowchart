@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <h1>Hello</h1>
+
 <style>
 .button {
   border: none;
@@ -102,6 +102,7 @@
 </head>
 <body>
 
+<h1>Hello</h1>
 <button id = "englishBTN" class="open-button" onclick="openForm()" >Lit elective</button>
 <div class="form-popup" id="myForm">
  <!--<form action="/fillin.php" class="form-container">-->
@@ -129,8 +130,19 @@ function closeForm() {
 }
 
 function updateButtonText(){
-  let text = document.getElementById("english").value;
-  alert(text);
+  var radios = document.getElementsByName('english');
+  let text = "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+    if (radios[i].checked) {
+      // do whatever you want with the checked radio
+      //alert(radios[i].value);
+      text = radios[i].value;
+      // only one radio can be logically checked, don't check the rest
+      break;
+    }
+  }
+
+  // alert(text);
   text = "Lit Elective: \n" + text;
   document.getElementById("englishBTN").innerHTML = text;
 }
