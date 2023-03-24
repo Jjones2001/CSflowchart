@@ -98,11 +98,22 @@
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+.check_button{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 </style>
 </head>
 <body>
 
 <h1>Hello</h1>
+
+<div class = "check_button">
+<button onclick="courseCheck()" id = "check_courses"> Check Courses</button>
+</div>
+
 <button id = "englishBTN" class="open-button" onclick="openForm()" >Lit elective</button>
 <div class="form-popup" id="myForm">
  <!--<form action="/fillin.php" class="form-container">-->
@@ -119,7 +130,11 @@
 <!--  </form> -->
 </div>
 
+
 <script>
+
+var tempGlobal = 0;
+
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -136,6 +151,10 @@ function updateButtonText(){
     if (radios[i].checked) {
       // do whatever you want with the checked radio
       //alert(radios[i].value);
+      if (radios[i].innerHTML == "ENGL 212"){
+        tempGlobal = 1;
+      }
+
       text = radios[i].value;
       // only one radio can be logically checked, don't check the rest
       break;
@@ -146,6 +165,22 @@ function updateButtonText(){
   text = "Lit Elective: \n" + text;
   document.getElementById("englishBTN").innerHTML = text;
 }
+</script>
+
+<script>
+
+function courseCheck(){
+  if tempGlobal = 1{
+    alert("you cannot take this course");
+  }else tempGlobal = 0{
+    alert("you can take this course");
+  }
+
+}
+
+document.getElementById("check_courses").addEventListener("click", courseCheck)
+
+
 </script>
 
 <script>
