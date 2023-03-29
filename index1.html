@@ -151,17 +151,21 @@ function updateButtonText(){
     if (radios[i].checked) {
       // do whatever you want with the checked radio
       //alert(radios[i].value);
-      if (radios[i].innerHTML == "ENGL 212"){
-        tempGlobal = 1;
-      }
 
       text = radios[i].value;
+
       // only one radio can be logically checked, don't check the rest
       break;
     }
   }
 
   // alert(text);
+  if (radios[i].value == "ENGL 212"){
+    var tempGlobal = 1;
+  }else{
+    var tempGlobal = 0;
+  }
+  alert(tempGlobal)
   text = "Lit Elective: \n" + text;
   document.getElementById("englishBTN").innerHTML = text;
 }
@@ -170,10 +174,10 @@ function updateButtonText(){
 <script>
 
 function courseCheck(){
-  if tempGlobal = 1{
-    alert("you cannot take this course");
-  }else tempGlobal = 0{
-    alert("you can take this course");
+  if (text = "ENGL 212"){
+    var tempGlobal = 1;
+  }else{
+    var tempGlobal = 0;
   }
 
 }
