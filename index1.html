@@ -111,7 +111,7 @@
 <h1>Hello</h1>
 
 <div class = "check_button">
-<button onclick="courseCheck()" id = "check_courses"> Check Courses</button>
+<button type="button" onclick="courseCheck()" > Check Courses</button>
 </div>
 
 <button id = "englishBTN" class="open-button" onclick="openForm()" >Lit elective</button>
@@ -162,27 +162,30 @@ function updateButtonText(){
   // alert(text);
   if (radios[i].value == "ENGL 212"){
     var tempGlobal = 1;
+    alert("you cannot take this course");
   }else{
     var tempGlobal = 0;
+    alert("you can take this course")
   }
-  alert(tempGlobal)
   text = "Lit Elective: \n" + text;
   document.getElementById("englishBTN").innerHTML = text;
 }
+
+function courseCheck(){
+  if (tempGlobal = 0){
+    document.getElementById("englishBTN").style.color = 'green';
+  }else{
+    document.getElementById("englishBTN").style.color = 'red';
+  }
+}
+
+
 </script>
 
 <script>
 
-function courseCheck(){
-  if (text = "ENGL 212"){
-    var tempGlobal = 1;
-  }else{
-    var tempGlobal = 0;
-  }
 
-}
-
-document.getElementById("check_courses").addEventListener("click", courseCheck)
+//document.getElementById("check_courses").addEventListener("click", courseCheck)
 
 
 </script>
