@@ -133,7 +133,7 @@
 
 <script>
 
-var tempGlobal = 0;
+tempGlobal = 0;
 
 function openForm() {
   document.getElementById("myForm").style.display = "block";
@@ -153,29 +153,31 @@ function updateButtonText(){
       //alert(radios[i].value);
 
       text = radios[i].value;
-
+      alert(text);
       // only one radio can be logically checked, don't check the rest
       break;
     }
   }
 
   // alert(text);
-  if (radios[i].value == "ENGL 212"){
-    var tempGlobal = 1;
-    alert("you cannot take this course");
+  if (text == "ENGL 212"){
+    tempGlobal = 1;
   }else{
-    var tempGlobal = 0;
-    alert("you can take this course")
+    tempGlobal = 0;
   }
   text = "Lit Elective: \n" + text;
   document.getElementById("englishBTN").innerHTML = text;
 }
 
+//var tempGlobal == text
+
 function courseCheck(){
-  if (tempGlobal = 0){
-    document.getElementById("englishBTN").style.color = 'green';
-  }else{
+  if (tempGlobal == 1){
+    alert("you cannot take this course");
     document.getElementById("englishBTN").style.color = 'red';
+  }else{
+    alert("you can take this course")
+    document.getElementById("englishBTN").style.color = 'green';
   }
 }
 
