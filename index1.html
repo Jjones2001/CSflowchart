@@ -105,6 +105,7 @@
   right: 0;
 }
 </style>
+<!--used to style the script and elements inside the webpage -->
 </head>
 <body>
 
@@ -116,7 +117,6 @@
 
 <button id = "englishBTN" class="open-button" onclick="openForm()" >Lit elective</button>
 <div class="form-popup" id="myForm">
- <!--<form action="/fillin.php" class="form-container">-->
   <input type="radio" id="english" name="english" value="ENGL 211">
   <label for="english">English 211</label><br>
   <input type="radio" id="english" name="english" value="ENGL 212">
@@ -127,7 +127,7 @@
   <label for="english">English 214</label><br>
   <button class="btn" onclick="updateButtonText()">Submit</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-<!--  </form> -->
+<!--  </used to create form and ui interface> -->
 </div>
 
 
@@ -149,17 +149,12 @@ function updateButtonText(){
   let text = "";
   for (var i = 0, length = radios.length; i < length; i++) {
     if (radios[i].checked) {
-      // do whatever you want with the checked radio
-      //alert(radios[i].value);
-
       text = radios[i].value;
       alert(text);
-      // only one radio can be logically checked, don't check the rest
       break;
     }
   }
 
-  // alert(text);
   if (text == "ENGL 212"){
     tempGlobal = 1;
   }else{
@@ -168,8 +163,6 @@ function updateButtonText(){
   text = "Lit Elective: \n" + text;
   document.getElementById("englishBTN").innerHTML = text;
 }
-
-//var tempGlobal == text
 
 function courseCheck(){
   if (tempGlobal == 1){
@@ -182,12 +175,10 @@ function courseCheck(){
 }
 
 
+
 </script>
-
+<!--"broken with version Version 2.18.1" -->
 <script>
-
-
-//document.getElementById("check_courses").addEventListener("click", courseCheck)
 
 
 </script>
